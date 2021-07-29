@@ -13,7 +13,7 @@ RUN apk add --no-cache python3 \
 \
 && git clone https://github.com/n8henrie/fauxmo-plugins /fauxmo-plugins \
 \
-&& apk del git
+&& apk del --no-cache git
 
 COPY . /container/
 

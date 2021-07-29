@@ -16,6 +16,7 @@ if [ ! -f "$INITALIZED" ]; then
 
   cat /container/config/config.json.part > /etc/fauxmo/config.json
 
+
   ##
   # fauxmo Commandline Config ENVs
   ##
@@ -33,8 +34,12 @@ if [ ! -f "$INITALIZED" ]; then
     CONF_CONF_VALUE=$(echo "$I_CONF" | sed 's/^[^=]*=//g')
     echo "$CONF_CONF_VALUE" >> /etc/fauxmo/config.json
   done
-  echo '            ]' >> /etc/fauxmo/config.json
-  echo '        }' >> /etc/fauxmo/config.json # HomeAssistant End
+
+  if env | grep '^FAUXMO_PLUGIN_COMMANDLINE_DEVICE_' >/dev/null 2>/dev/null; then
+    echo '            ]' >> /etc/fauxmo/config.json
+    echo '        }' >> /etc/fauxmo/config.json # Commandline End
+  fi
+
 
   ##
   # fauxmo HomeAssistant Config ENVs
@@ -56,8 +61,11 @@ if [ ! -f "$INITALIZED" ]; then
     CONF_CONF_VALUE=$(echo "$I_CONF" | sed 's/^[^=]*=//g')
     echo "$CONF_CONF_VALUE" >> /etc/fauxmo/config.json
   done
-  echo '            ]' >> /etc/fauxmo/config.json
-  echo '        }' >> /etc/fauxmo/config.json # HomeAssistant End
+
+  if env | grep '^FAUXMO_PLUGIN_HOMEASSISTANT_CONFIG=' >/dev/null 2>/dev/null; then
+    echo '            ]' >> /etc/fauxmo/config.json
+    echo '        }' >> /etc/fauxmo/config.json # HomeAssistant End
+  fi
 
 
   echo '    }' >> /etc/fauxmo/config.json

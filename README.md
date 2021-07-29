@@ -54,6 +54,7 @@ _this one just needs one or more devices, no general config needed_
 * __FAUXMO_PLUGIN_HOMEASSISTANT_CONFIG__
     * general config of the `HomeAssistantPlugin`
     * needs to be vaild json and end with a `,`!
+    * use long-lived access token for the `ha_token` parameter, which you can generate in the web interface at the `/profile` homeassistant endpoint.
     * examples
         * `'"ha_host": "192.168.0.50", "ha_port": 8123, "ha_protocol": "http", "ha_token": "abc123",'`
 

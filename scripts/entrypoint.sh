@@ -63,7 +63,7 @@ if [ ! -f "$INITALIZED" ]; then
   echo '    }' >> /etc/fauxmo/config.json
   echo '}' >> /etc/fauxmo/config.json
 else
-  echo ">> CONTAINER: already initialized - direct start of rsync"
+  echo ">> CONTAINER: already initialized - direct start of fauxmo"
 fi
 
 ##

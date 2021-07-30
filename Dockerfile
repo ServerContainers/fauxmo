@@ -5,6 +5,7 @@ ENV PATH="/container/scripts:${PATH}"
 RUN apk add --no-cache python3 \
                        py3-pip \
                        git \
+                       curl \
 \
 && pip install --upgrade pip \
 && pip install fauxmo \
@@ -12,6 +13,7 @@ RUN apk add --no-cache python3 \
 && mkdir /etc/fauxmo/ \
 \
 && git clone https://github.com/n8henrie/fauxmo-plugins /fauxmo-plugins \
+&& rm -rf /fauxmo-plugins/.git \
 \
 && apk del --no-cache git
 

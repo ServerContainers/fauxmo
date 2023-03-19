@@ -11,8 +11,22 @@ __IMPORTANT: Dockers `network_mode: host` should be used to make it visible insi
 
 _TODO: currently there are only 2 Plugins configurable using Environment Variables - if you like to seem more, take a look at my `scripts/entrypoint.sh` file and implement others - I'm happy to merge pull requests_
 
+## Build & Variants
+
+You can specify `DOCKER_REGISTRY` environment variable (for example `my.registry.tld`)
+and use the build script to build the main container and it's variants for _x86_64, arm64 and arm_
+
+You'll find all images tagged like `a3.15.0-f0.6.0` which means `a<alpine version>-f<fauxmo version>`.
+This way you can pin your installation/configuration to a certian version. or easily roll back if you experience any problems
+(don't forget to open a issue in that case ;D).
+
+To build a `latest` tag run `./build.sh release`
+
 ## Changelogs
 
+* 2023-03-19
+    * switched from docker hub to a build-yourself container
+    * new multistage build
 * 2021-07-29
     * initial release
     * raw `/etc/fauxmo/config.json` support

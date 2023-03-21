@@ -1,4 +1,4 @@
-# fauxmo
+# fauxmo - (ghcr.io/servercontainers/fauxmo) [x86 + arm]
 
 fauxmo - fauxmo `pip` releases on `alpine`
 
@@ -24,6 +24,9 @@ To build a `latest` tag run `./build.sh release`
 
 ## Changelogs
 
+* 2023-03-20
+    * github action to build container
+    * implemented ghcr.io as new registry
 * 2023-03-19
     * switched from docker hub to a build-yourself container
     * new multistage build

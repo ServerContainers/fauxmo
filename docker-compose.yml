@@ -3,7 +3,7 @@ version: '3'
 services:
   fauxmo:
     build: .
-    image: fauxmo
+    image: ghcr.io/servercontainers/fauxmo
     restart: always
     network_mode: host
     environment:

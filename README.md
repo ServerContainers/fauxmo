@@ -20,7 +20,7 @@ You'll find all images tagged like `a3.15.0-f0.6.0` which means `a<alpine versio
 This way you can pin your installation/configuration to a certian version. or easily roll back if you experience any problems
 (don't forget to open a issue in that case ;D).
 
-To build a `latest` tag run `./build.sh release`
+To build a `latest` tag run `./build.sh release`.
 
 ## Changelogs
 

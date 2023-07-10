@@ -1,7 +1,7 @@
 #!/bin/bash
 export IMG=$(docker build -q --pull --no-cache -t 'get-version' .)
 
-export FAUXMO_VERSION=$(docker run --rm -t get-version pip list | grep fauxmo | tr ' ' '\n' | grep '[0-9]\.[0-9]')
+export FAUXMO_VERSION=$(docker run --rm -t get-version pip list | grep fauxmo | tr ' ' '\n' | grep '[0-9]\.[0-9]' | tr -d '\r')
 export ALPINE_VERSION=$(docker run --rm -t get-version cat /etc/alpine-release | tail -n1 | tr -d '\r')
 [ -z "$ALPINE_VERSION" ] && exit 1
 

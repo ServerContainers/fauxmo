@@ -7,8 +7,8 @@ RUN apk add --no-cache python3 \
                        git \
                        curl \
 \
-&& pip install --upgrade pip \
-&& pip install fauxmo \
+&& pip install --break-system-packages --upgrade pip \
+&& pip install --break-system-packages fauxmo \
 \
 && mkdir /etc/fauxmo/ \
 \
